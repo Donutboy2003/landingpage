@@ -13,6 +13,8 @@ export default function Home() {
   <HeroSectionSimpleCentred/>
   <FeatureSectionSimple/>
   <FooterSimple/>
+  <FeatureSectionSimple/>
+  <FeatureSectionSimple/>
   </>
   );
 }
