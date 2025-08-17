@@ -1,7 +1,19 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { ChevronRightIcon } from "lucide-react";
+import { useState } from "react";
 
 export default function HeroSectionSimpleCentred() {
+
+  const [email, setEmail] = useState("");
+
+  const handleWaitlistSubmit = () => {
+    // e.preventDefault();
+    // Handle waitlist submission here
+    console.log("Email submitted:", email);
+    // add  API call or form submission logic here
+  };
+
   return (
     <>
       {/* Hero */}
@@ -36,16 +48,34 @@ export default function HeroSectionSimpleCentred() {
           {/* Title */}
           <div className="mx-auto mt-5 max-w-2xl text-center">
             <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-              Let&apos;s Build Together
+              Your Everyday City Ride, Shared.
             </h1>
           </div>
           {/* End Title */}
           <div className="mx-auto mt-5 max-w-3xl text-center">
             <p className="text-muted-foreground text-xl">
-              Over 10+ fully responsive, UI blocks you can drop into your Shadcn
-              UI projects and customize to your heart&apos;s content.
+              Perfect for daily city commutes. Save money on every trip while helping drivers cover fuel costs. It’s ride sharing done right.
             </p>
           </div>
+
+          {/* Waitlist Form */}
+          <div className="mx-auto mt-8 max-w-md">
+            <div className="flex gap-2">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                required
+              />
+              <Button onClick={handleWaitlistSubmit} size="default">
+                Join Waitlist
+              </Button>
+            </div>
+          </div>
+          {/* End Waitlist Form */}
+
           {/* Buttons */}
           <div className="mt-8 flex justify-center gap-3">
             <Button size={"lg"}>Get started</Button>
@@ -54,7 +84,7 @@ export default function HeroSectionSimpleCentred() {
             </Button>
           </div>
           {/* End Buttons */}
-          <div className="mt-5 flex items-center justify-center gap-x-1 sm:gap-x-3">
+          {/* <div className="mt-5 flex items-center justify-center gap-x-1 sm:gap-x-3">
             <span className="text-muted-foreground text-sm">
               Package Manager:
             </span>
@@ -81,7 +111,7 @@ export default function HeroSectionSimpleCentred() {
               Installation Guide
               <ChevronRightIcon className="h-4 w-4 flex-shrink-0" />
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
       {/* End Hero */}
