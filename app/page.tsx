@@ -4,6 +4,7 @@ import HeroSectionSimpleCentred from "@/components/simple-centred";
 import Image from "next/image";
 import { NavigationBar } from "@/components/NavigationBar";
 import { NavbarDemo } from "@/components/NavBarDemo";
+import ForDriver from "@/components/ForDriver";
 
 export default function Home() {
   return (
@@ -12,9 +13,8 @@ export default function Home() {
   <NavbarDemo/>
   <HeroSectionSimpleCentred/>
   <FeatureSectionSimple/>
+  <ForDriver/>
   <FooterSimple/>
-  <FeatureSectionSimple/>
-  <FeatureSectionSimple/>
   </>
   );
 }

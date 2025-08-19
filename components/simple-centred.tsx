@@ -21,7 +21,7 @@ export default function HeroSectionSimpleCentred() {
         <div className="container mx-auto px-4 py-24 md:px-6 lg:py-32 2xl:max-w-[1400px]">
           {/* Announcement Banner */}
           <div className="flex justify-center">
-            <a
+            {/* <a
               className="inline-flex items-center gap-x-2 rounded-full border p-1 ps-3 text-sm transition"
               href="#"
             >
@@ -42,20 +42,22 @@ export default function HeroSectionSimpleCentred() {
                   <path d="m9 18 6-6-6-6" />
                 </svg>
               </span>
-            </a>
+            </a> */}
           </div>
           {/* End Announcement Banner */}
           {/* Title */}
           <div className="mx-auto mt-5 max-w-2xl text-center">
             <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-              Your Everyday City Ride, Shared.
+              Your Everyday Ride, Shared.
             </h1>
           </div>
           {/* End Title */}
           <div className="mx-auto mt-5 max-w-3xl text-center">
             <p className="text-muted-foreground text-xl">
-              Perfect for daily city commutes. Save money on every trip while helping drivers cover fuel costs. It’s ride sharing done right.
+              Perfect for local commutes. Save money on every trip while helping drivers cover fuel costs. It’s ride sharing done right.
             </p>
+            {/* Perfect for daily city commutes. Save money on every trip while helping drivers cover fuel costs. 
+            Affordable daily commutes and short trips that save passengers money and help drivers with fuel costs. */}
           </div>
 
           {/* Waitlist Form */}
@@ -77,12 +79,12 @@ export default function HeroSectionSimpleCentred() {
           {/* End Waitlist Form */}
 
           {/* Buttons */}
-          <div className="mt-8 flex justify-center gap-3">
+          {/* <div className="mt-8 flex justify-center gap-3">
             <Button size={"lg"}>Get started</Button>
             <Button size={"lg"} variant={"outline"}>
               Learn more
             </Button>
-          </div>
+          </div> */}
           {/* End Buttons */}
           {/* <div className="mt-5 flex items-center justify-center gap-x-1 sm:gap-x-3">
             <span className="text-muted-foreground text-sm">
