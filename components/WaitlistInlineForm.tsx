@@ -9,6 +9,7 @@ export function WaitlistInlineForm({ ClassName }: { ClassName?: string }) {
   const [IsSubmitting, SetIsSubmitting] = React.useState(false);
   const [Success, SetSuccess] = React.useState(false);
   const [ErrorMsg, SetErrorMsg] = React.useState<string | null>(null);
+  const [ServerError, SetServerError] = React.useState<string | null>(null);
 
   const OnSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -16,6 +17,7 @@ export function WaitlistInlineForm({ ClassName }: { ClassName?: string }) {
       SetIsSubmitting(true);
       SetErrorMsg(null);
       SetSuccess(false);
+      SetServerError(null);
 
       const Res = await fetch("/api/subscribe", {
         method: "POST",
@@ -34,8 +36,9 @@ export function WaitlistInlineForm({ ClassName }: { ClassName?: string }) {
 
       SetSuccess(true);
       SetEmail("");
-    } catch (Err: any) {
-      SetErrorMsg(Err?.message ?? "Something went wrong.");
+    } catch (Err: unknown) {
+      const Msg = Err instanceof Error ? Err.message : "Something went wrong.";
+      SetServerError(Msg);
     } finally {
       SetIsSubmitting(false);
     }
