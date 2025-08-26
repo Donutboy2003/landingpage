@@ -23,12 +23,15 @@ export default function HeroSectionSimpleCentred() {
       });
 
       const Data = await Res.json();
-      if (!Res.ok || !Data?.Ok) throw new Error(Data?.Error ?? "Submission failed");
+      if (!Res.ok || !Data?.Ok) {
+        throw new Error(Data?.Error ?? "Submission failed");
+      }
 
       SetSuccess(true);
       SetEmail("");
-    } catch (Err: any) {
-      SetServerError(Err?.message ?? "Something went wrong.");
+    } catch (Err: unknown) {
+      const Msg = Err instanceof Error ? Err.message : "Something went wrong.";
+      SetServerError(Msg);
     } finally {
       SetIsSubmitting(false);
     }
@@ -52,7 +55,9 @@ export default function HeroSectionSimpleCentred() {
         {/* Waitlist Form */}
         <form onSubmit={OnSubmit} className="mx-auto mt-8 max-w-md">
           <div className="flex gap-2">
-            <label htmlFor="WaitlistEmail" className="sr-only">Email</label>
+            <label htmlFor="WaitlistEmail" className="sr-only">
+              Email
+            </label>
             <input
               id="WaitlistEmail"
               type="email"

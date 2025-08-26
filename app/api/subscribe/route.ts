@@ -5,7 +5,7 @@ import { createClient } from "@supabase/supabase-js";
 export const runtime = "nodejs";
 
 const SubscribeSchema = z.object({
-  Email: z.string().email().transform(v => v.trim().toLowerCase()),
+  Email: z.string().email().transform((v) => v.trim().toLowerCase()),
 });
 
 export async function POST(req: Request) {
@@ -36,9 +36,10 @@ export async function POST(req: Request) {
     }
 
     return NextResponse.json({ Ok: true });
-  } catch (err: any) {
+  } catch (Err: unknown) {
+    const Msg = Err instanceof Error ? Err.message : "unknown";
     return NextResponse.json(
-      { Ok: false, Error: `Server error: ${err?.message ?? "unknown"}` },
+      { Ok: false, Error: `Server error: ${Msg}` },
       { status: 500 }
     );
   }
