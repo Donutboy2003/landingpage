@@ -12,8 +12,8 @@ export default function Home() {
   {/* <RideShareNavbar/> */}
   <NavbarDemo/>
   <HeroSectionSimpleCentred/>
-  <FeatureSectionSimple/>
-  <ForDriver/>
+  {/* <FeatureSectionSimple/> */}
+  {/* <ForDriver/> */}
   <FooterSimple/>
   </>
   );
