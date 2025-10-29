@@ -28,12 +28,12 @@ export function NavbarDemo() {
     },
     {
       name: "Pricing",
-      link: "#pricing",
+      link: "/pricing",
     },
     // {
     //   name: "Third",
     //   link: "#third",
-    // },    
+    // },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

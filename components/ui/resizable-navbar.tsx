@@ -234,7 +234,7 @@ export const MobileNavToggle = ({
 export const NavbarLogo = () => {
   return (
     <a
-      href="#"
+      href="/"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-2xl font-normal text-black"
     >
       <img src={"/tuk_bg_blue.jpg"} alt="logo" width={50} height={50} />
