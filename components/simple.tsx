@@ -30,13 +30,13 @@ export default function FooterSimple() {
         <div className="flex flex-col items-center gap-4 md:flex-row md:gap-6">
           <nav className="flex gap-4 md:gap-6">
             <Link
-              href="#"
+              href="termsofservice"
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               Terms
             </Link>
             <Link
-              href="#"
+              href="privacypolicy"
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               Privacy
