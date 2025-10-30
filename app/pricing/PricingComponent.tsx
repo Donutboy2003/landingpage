@@ -16,7 +16,7 @@ export default function PricingComponent() {
         <div className="mx-auto mt-5 max-w-3xl text-center">
           <p className="text-muted-foreground text-xl">
             Perfect for local commutes. Save money on every trip while helping
-            drivers cover fuel costs. It's ride sharing done right.
+            drivers cover fuel costs. It&apos;s ride sharing done right.
           </p>
         </div>
 
