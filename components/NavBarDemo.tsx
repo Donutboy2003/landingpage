@@ -10,6 +10,7 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
+import { COLOR_PALETTE } from "@/interfaces/color_palette";
 import { useState } from "react";
 
 export function NavbarDemo() {
@@ -47,7 +48,16 @@ export function NavbarDemo() {
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             {/* <NavbarButton variant="secondary">Login</NavbarButton> */}
-            <NavbarButton variant="primary">Join Waitlist</NavbarButton>
+            <NavbarButton
+              variant="primary"
+              style={{
+                backgroundColor: COLOR_PALETTE.BLUE,
+                color: COLOR_PALETTE.WHITE,
+              }}
+              href={`/`}
+            >
+              Join Waitlist
+            </NavbarButton>
           </div>
         </NavBody>
 
@@ -87,6 +97,11 @@ export function NavbarDemo() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
+                style={{
+                  backgroundColor: COLOR_PALETTE.BLUE,
+                  color: COLOR_PALETTE.WHITE,
+                }}
+                href={`/`}
               >
                 Join Waitlist
               </NavbarButton>

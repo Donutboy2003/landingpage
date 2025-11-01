@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { COLOR_PALETTE } from "@/interfaces/color_palette";
 import React from "react";
 
 export default function PricingComponent() {
@@ -8,13 +9,13 @@ export default function PricingComponent() {
     <div>
       <div className="container mx-auto px-4 py-24 md:px-6 lg:py-32 2xl:max-w-[1400px]">
         <div className="mx-auto mt-5 max-w-2xl text-center">
-          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+          <h1 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl">
             Pricing
           </h1>
         </div>
 
         <div className="mx-auto mt-5 max-w-3xl text-center">
-          <p className="text-muted-foreground text-xl">
+          <p className="text-xl">
             Perfect for local commutes. Save money on every trip while helping
             drivers cover fuel costs. It&apos;s ride sharing done right.
           </p>
@@ -98,7 +99,13 @@ export default function PricingComponent() {
         </div>
 
         <div className="mx-auto mt-5 max-w-2xl text-center">
-          <Button onClick={() => (window.location.href = "/")}>
+          <Button
+            onClick={() => (window.location.href = "/")}
+            style={{
+              backgroundColor: COLOR_PALETTE.BLUE,
+              color: COLOR_PALETTE.WHITE,
+            }}
+          >
             Join Waitlist Now
           </Button>
         </div>

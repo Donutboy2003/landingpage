@@ -3,6 +3,7 @@
 import * as React from "react";
 //import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { COLOR_PALETTE } from "@/interfaces/color_palette";
 
 export function WaitlistInlineForm({ ClassName }: { ClassName?: string }) {
   const [Email, SetEmail] = React.useState("");
@@ -25,7 +26,9 @@ export function WaitlistInlineForm({ ClassName }: { ClassName?: string }) {
         body: JSON.stringify({
           Email: Email.trim().toLowerCase(),
           SourcePath:
-            typeof window !== "undefined" ? window.location.pathname : undefined,
+            typeof window !== "undefined"
+              ? window.location.pathname
+              : undefined,
         }),
       });
 
@@ -45,8 +48,15 @@ export function WaitlistInlineForm({ ClassName }: { ClassName?: string }) {
   };
 
   return (
-    <form onSubmit={OnSubmit} className={["flex w-full max-w-lg gap-3", ClassName].filter(Boolean).join(" ")}>
-      <label htmlFor="WaitlistEmail" className="sr-only">Email</label>
+    <form
+      onSubmit={OnSubmit}
+      className={["flex w-full max-w-lg gap-3", ClassName]
+        .filter(Boolean)
+        .join(" ")}
+    >
+      <label htmlFor="WaitlistEmail" className="sr-only">
+        Email
+      </label>
       <input
         id="WaitlistEmail"
         type="email"
@@ -55,16 +65,27 @@ export function WaitlistInlineForm({ ClassName }: { ClassName?: string }) {
         value={Email}
         onChange={(e) => SetEmail(e.target.value)}
       />
-      <Button type="submit" disabled={IsSubmitting}>
+      <Button
+        type="submit"
+        disabled={IsSubmitting}
+        style={{
+          backgroundColor: COLOR_PALETTE.BLUE,
+          color: COLOR_PALETTE.WHITE,
+        }}
+      >
         {IsSubmitting ? "Joining…" : "Join Waitlist"}
       </Button>
 
       {/* Inline feedback (optional) */}
       {Success && (
-        <p className="sr-only" role="status">Thanks! You’re on the list.</p>
+        <p className="sr-only" role="status">
+          Thanks! You’re on the list.
+        </p>
       )}
       {ErrorMsg && (
-        <p className="sr-only" role="alert">{ErrorMsg}</p>
+        <p className="sr-only" role="alert">
+          {ErrorMsg}
+        </p>
       )}
     </form>
   );

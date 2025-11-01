@@ -5,8 +5,7 @@ import React from "react";
 export default function TermsOfService() {
   return (
     <div>
-      <div className="container mx-auto px-4 py-24 md:px-6 lg:py-32 2xl:max-w-[1400px]">
-        <div></div>
+      <div className="container space-y-4 mx-auto px-4 py-24 md:px-6 lg:py-32 2xl:max-w-[1400px]">
         <h1 className="text-4xl font-bold">Privacy Policy</h1>
         <p>Last updated: October 29, 2025</p>
 

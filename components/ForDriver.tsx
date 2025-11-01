@@ -37,7 +37,7 @@ export default function ForDriver() {
         <h2 className="text-3xl font-bold">
           Earn Money From Trips You&apos;re Already Taking
         </h2>
-        <p className="text-muted-foreground mx-auto max-w-2xl">
+        <p className="mx-auto max-w-2xl">
           Everything you need to get your work done efficiently and effectively.
           Built for developers, designed for success.
         </p>
@@ -49,9 +49,7 @@ export default function ForDriver() {
             <CardContent className="space-y-2 p-6">
               <feature.icon className="text-primary h-12 w-12" />
               <h3 className="font-bold">{feature.title}</h3>
-              <p className="text-muted-foreground text-sm">
-                {feature.description}
-              </p>
+              <p className="text-sm">{feature.description}</p>
             </CardContent>
           </Card>
         ))}

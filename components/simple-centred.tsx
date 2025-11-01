@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { Button } from "@/components/ui/button";
+import { COLOR_PALETTE } from "@/interfaces/color_palette";
 
 export default function HeroSectionSimpleCentred() {
   const [Email, SetEmail] = React.useState("");
@@ -41,14 +42,15 @@ export default function HeroSectionSimpleCentred() {
     <div>
       <div className="container mx-auto px-4 py-24 md:px-6 lg:py-32 2xl:max-w-[1400px]">
         <div className="mx-auto mt-5 max-w-2xl text-center">
-          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+          <h1 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl">
             Your Everyday Ride, Shared.
           </h1>
         </div>
 
         <div className="mx-auto mt-5 max-w-3xl text-center">
-          <p className="text-muted-foreground text-xl">
-            Perfect for local commutes. Save money on every trip while helping drivers cover fuel costs. It’s ride sharing done right.
+          <p className="text-xl">
+            Perfect for local commutes. Save money on every trip while helping
+            drivers cover fuel costs. It’s ride sharing done right.
           </p>
         </div>
 
@@ -65,10 +67,17 @@ export default function HeroSectionSimpleCentred() {
               value={Email}
               onChange={(e) => SetEmail(e.target.value)}
               disabled={IsSubmitting}
-              className="flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:opacity-60"
+              className="flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:opacity-60"
               required
             />
-            <Button type="submit" disabled={IsSubmitting}>
+            <Button
+              type="submit"
+              disabled={IsSubmitting}
+              style={{
+                backgroundColor: COLOR_PALETTE.BLUE,
+                color: COLOR_PALETTE.WHITE,
+              }}
+            >
               {IsSubmitting ? "Joining…" : "Join Waitlist"}
             </Button>
           </div>

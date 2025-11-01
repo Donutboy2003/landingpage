@@ -3,6 +3,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { COLOR_PALETTE } from "@/interfaces/color_palette";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,18 +27,15 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col bg-background antialiased`}
+        style={{
+          backgroundColor: COLOR_PALETTE.WHITE,
+          color: COLOR_PALETTE.BLUE,
+        }}
       >
         {}
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <div className="grow"></div>
-          <FooterSimple />
-        </ThemeProvider>
+        {children}
+        <div className="grow"></div>
+        <FooterSimple />
       </body>
     </html>
   );

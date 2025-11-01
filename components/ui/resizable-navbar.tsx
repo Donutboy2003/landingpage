@@ -1,4 +1,5 @@
 "use client";
+import { COLOR_PALETTE } from "@/interfaces/color_palette";
 import { cn } from "@/lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import {
@@ -239,7 +240,9 @@ export const NavbarLogo = () => {
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-2xl font-normal text-black"
     >
       <img src={"/tuk_bg_blue.jpg"} alt="logo" width={50} height={50} />
-      <span className="font-medium text-black dark:text-white">Tuk</span>
+      <span className="font-medium" style={{ color: COLOR_PALETTE.BLUE }}>
+        Tuk
+      </span>
     </Link>
   );
 };
