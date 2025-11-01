@@ -1,7 +1,8 @@
+import FooterSimple from "@/components/simple";
+import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,9 +23,9 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning> 
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-background antialiased`} 
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col bg-background antialiased`}
       >
         {}
         <ThemeProvider
@@ -34,6 +35,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <div className="grow"></div>
+          <FooterSimple />
         </ThemeProvider>
       </body>
     </html>

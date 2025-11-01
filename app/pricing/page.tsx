@@ -1,5 +1,4 @@
 import { NavbarDemo } from "@/components/NavBarDemo";
-import FooterSimple from "@/components/simple";
 import { Metadata } from "next";
 import { Fragment } from "react";
 import PricingComponent from "./PricingComponent";
@@ -14,7 +13,6 @@ export default async function Page() {
     <Fragment>
       <NavbarDemo />
       <PricingComponent />
-      <FooterSimple />
     </Fragment>
   );
 }
